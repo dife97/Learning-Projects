@@ -15,6 +15,7 @@
 		F81C51AA284A8ED700CAA683 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F81C51A8284A8ED700CAA683 /* LaunchScreen.storyboard */; };
 		F81C51B2284A914400CAA683 /* Refeicao.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81C51B1284A914400CAA683 /* Refeicao.swift */; };
 		F81C51B4284A91C900CAA683 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81C51B3284A91C900CAA683 /* Item.swift */; };
+		F81C51B9284A96F400CAA683 /* RefeicoesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81C51B8284A96F400CAA683 /* RefeicoesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		F81C51AB284A8ED700CAA683 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F81C51B1284A914400CAA683 /* Refeicao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refeicao.swift; sourceTree = "<group>"; };
 		F81C51B3284A91C900CAA683 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		F81C51B8284A96F400CAA683 /* RefeicoesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefeicoesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				F81C51A1284A8ED400CAA683 /* ViewController.swift */,
+				F81C51B8284A96F400CAA683 /* RefeicoesTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				F81C51B4284A91C900CAA683 /* Item.swift in Sources */,
 				F81C51A2284A8ED400CAA683 /* ViewController.swift in Sources */,
 				F81C519E284A8ED400CAA683 /* AppDelegate.swift in Sources */,
+				F81C51B9284A96F400CAA683 /* RefeicoesTableViewController.swift in Sources */,
 				F81C51A0284A8ED400CAA683 /* SceneDelegate.swift in Sources */,
 				F81C51B2284A914400CAA683 /* Refeicao.swift in Sources */,
 			);
