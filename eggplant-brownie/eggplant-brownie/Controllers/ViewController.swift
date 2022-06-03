@@ -15,10 +15,12 @@ class ViewController: UIViewController {
     
     @IBAction func adicionar(_ sender: Any) {
         
-        guard let nomeDaRefeicao = nomeTextField?.text else { return }
-        
-        guard let felicidadeDaRefeicao = felicidadeTextField?.text,
-              let felicidade = Int(felicidadeDaRefeicao) else { return }
+        guard let nomeDaRefeicao = nomeTextField?.text,
+              let felicidadeDaRefeicao = felicidadeTextField?.text,
+              let felicidade = Int(felicidadeDaRefeicao) else {
+            print("erro ao tentar criar a refeição")
+            return
+        }
         
         let refeicao = Refeicao(nome: nomeDaRefeicao, felicidade: felicidade)
         
