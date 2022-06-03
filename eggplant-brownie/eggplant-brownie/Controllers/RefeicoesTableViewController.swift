@@ -33,6 +33,4 @@ class RefeicoesTableViewController: UITableViewController {
             viewController.tableViewController = self
         }
     }
-    
-    
 }
