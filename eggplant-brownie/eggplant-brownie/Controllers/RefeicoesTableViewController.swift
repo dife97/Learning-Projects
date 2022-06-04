@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RefeicoesTableViewController: UITableViewController, ViewControllerDelegate {
+class RefeicoesTableViewController: UITableViewController, AdicionaRefeicaoDelegate {
     var refeicoes: [Refeicao] = []
         
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
