@@ -16,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		311E715C2850076800BDFF5F /* testing-playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "testing-playground.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		31DCBCD5284D4518001B514B /* IAmPoor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IAmPoor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31DCBCD8284D4518001B514B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31DCBCDA284D4518001B514B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +64,7 @@
 				31DCBCE1284D451D001B514B /* Assets.xcassets */,
 				31DCBCE3284D451D001B514B /* LaunchScreen.storyboard */,
 				31DCBCE6284D451D001B514B /* Info.plist */,
+				311E715C2850076800BDFF5F /* testing-playground.playground */,
 			);
 			path = IAmPoor;
 			sourceTree = "<group>";
