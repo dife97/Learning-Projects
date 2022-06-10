@@ -11,6 +11,8 @@ import UIKit
 class ResultsViewController: UIViewController {
     
     var total: String?
+    var people: String?
+    var selectedTip: String?
 
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var settingsLabel: UILabel!
@@ -19,6 +21,7 @@ class ResultsViewController: UIViewController {
         super.viewDidLoad()
 
         totalLabel.text = total
+        settingsLabel.text = "Split between \(people) people, with \(selectedTip) tip." 
     }
     
 
