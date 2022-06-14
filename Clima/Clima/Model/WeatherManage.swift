@@ -8,15 +8,22 @@
 
 import Foundation
 
+protocol WeatherManagerDelegate {
+    func didUpdateWeather(_ weatherManager: WeatherManage, weather: WeatherModel)
+    func didFailWithError(error: Error)
+}
+
 struct WeatherManage {
     let weatherURL = "https://api.openweathermap.org/data/2.5/weather?appid=215b772bcca3e58f5a3a3d6d740cf69e&units=metric"
     
+    var delegate: WeatherManagerDelegate?
+    
     func fetchWeather(cityName: String) {
         let urlString = "\(weatherURL)&q=\(cityName)"
-        performRequest(urlString: urlString)
+        performRequest(with: urlString)
     }
     
-    func performRequest(urlString: String) {
+    func performRequest(with urlString: String) {
         //1. Create a URL
         if let url = URL(string: urlString) {
             //2. Create a URLSession
@@ -25,12 +32,14 @@ struct WeatherManage {
             //3. Give the session a task
             let task = session.dataTask(with: url) { (data, response, error) in
                 if error != nil {
-                    print(error!)
+                    self.delegate?.didFailWithError(error: error!)
                     return
                 }
                 
                 if let safeData = data {
-                    self.parseJSON(weatherData: safeData)
+                    if let weather = self.parseJSON(safeData) {
+                        self.delegate?.didUpdateWeather(self, weather: weather)
+                    }
                 }
             }
             
@@ -39,7 +48,7 @@ struct WeatherManage {
         }
     }
     
-    func parseJSON(weatherData: Data) {
+    func parseJSON(_ weatherData: Data) -> WeatherModel? {
         let decoder = JSONDecoder()
         
         do {
@@ -49,13 +58,19 @@ struct WeatherManage {
             let name = decodedData.name
             
             let weather = WeatherModel(conditionId: id, cityName: name, temperature: temp)
-            
-            print(weather.conditionName)
+            return weather
             
         } catch {
-            print(error)
+            delegate?.didFailWithError(error: error)
+            return nil
         }
     }
-    
+}
 
+extension WeatherManage {
+    func fetchWeather(latitude: Double, longitude: Double) {
+        let urlString = "\(weatherURL)&lat=\(latitude)&lon=\(longitude)"
+        print(urlString)
+        performRequest(with: urlString)
+    }
 }
