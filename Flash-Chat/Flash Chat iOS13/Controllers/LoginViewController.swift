@@ -14,6 +14,13 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        emailTextfield.text = "teste@teste.com"
+        passwordTextfield.text = "123456"
+    }
+    
     @IBAction func loginPressed(_ sender: UIButton) {
         guard let email = emailTextfield.text,
               let password = passwordTextfield.text else { return }
@@ -22,7 +29,7 @@ class LoginViewController: UIViewController {
             if let error = error {
                 print(error)
             } else {
-                self.performSegue(withIdentifier: "LoginToChat", sender: self)
+                self.performSegue(withIdentifier: K.loginSegue, sender: self)
             }
         }
     }
