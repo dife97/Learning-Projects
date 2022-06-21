@@ -2,7 +2,7 @@
 projects while learning iOS development
 
 
-### [Clima]([https://www.youtube.com/watch?v=bXF6KMJFwSE](https://github.com/dife97/learning/tree/main/Clima))
+### [Clima](https://github.com/dife97/learning/tree/main/Clima)
 - Dark-mode UI
 - How to use vector images as image assets.
 - Delegate pattern.
