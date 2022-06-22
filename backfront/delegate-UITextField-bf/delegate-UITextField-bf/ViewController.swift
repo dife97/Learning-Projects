@@ -9,10 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var nomeTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var senhaTextField: UITextField!
-    @IBOutlet weak var cadastrarButton: UIButton!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var confirmationLabel: UILabel!
     
     override func viewDidLoad() {
@@ -20,20 +20,21 @@ class ViewController: UIViewController {
         
         confirmationLabel.isHidden = true
         
-        cadastrarButton.isEnabled = false
-        cadastrarButton.backgroundColor = .gray
+        registerButton.isEnabled = false
+        registerButton.backgroundColor = .gray
         
-        nomeTextField.delegate = self
+        nameTextField.delegate = self
         emailTextField.delegate = self
-        senhaTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
     @IBAction func cadastrarButtonPressed(_ sender: Any) {
         register()
     }
     
+    //MARK: - Private Methods
     private func register() {
-        if nomeTextField.text != "" && emailTextField.text != "" && senhaTextField.text != "" {
+        if nameTextField.text != "" && emailTextField.text != "" && passwordTextField.text != "" {
             confirmationLabel.isHidden = false
             print("Cadastro realizado com sucesso")
         }
@@ -58,18 +59,16 @@ extension ViewController: UITextFieldDelegate {
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        if nomeTextField.text != "" && emailTextField.text != "" && senhaTextField.text != "" {
-            cadastrarButton.isEnabled = true
-            cadastrarButton.backgroundColor = .red
+        if nameTextField.text != "" && emailTextField.text != "" && passwordTextField.text != "" {
+            registerButton.isEnabled = true
+            registerButton.backgroundColor = .red
         }
         return true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
         textField.resignFirstResponder()
         register()
-        
         return true
     }
 }
