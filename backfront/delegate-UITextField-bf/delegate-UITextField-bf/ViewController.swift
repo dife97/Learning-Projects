@@ -15,9 +15,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var confirmationLabel: UILabel!
     
+    
+    //MARK: - INITIALIZERS
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureTextFields()
+    }
+    
+    @IBAction func registerButtonPressed(_ sender: Any) {
+        register()
+    }
+    
+    //MARK: - PRIVATE METHODS
+    private func configureTextFields() {
         confirmationLabel.isHidden = true
         
         registerButton.isEnabled = false
@@ -28,20 +39,15 @@ class ViewController: UIViewController {
         passwordTextField.delegate = self
     }
     
-    @IBAction func cadastrarButtonPressed(_ sender: Any) {
-        register()
+    private func isAllTextFieldsFilled() -> Bool {
+        nameTextField.text != "" && emailTextField.text != "" && passwordTextField.text != "" ? true : false
     }
     
-    //MARK: - Private Methods
     private func register() {
         if isAllTextFieldsFilled() {
             confirmationLabel.isHidden = false
             print("Cadastro realizado com sucesso")
         }
-    }
-    
-    private func isAllTextFieldsFilled() -> Bool {
-        nameTextField.text != "" && emailTextField.text != "" && passwordTextField.text != "" ? true : false
     }
 }
 
@@ -53,12 +59,14 @@ extension ViewController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if textField.text == "" {
-            textField.layer.borderColor = UIColor.red.cgColor
-            textField.layer.borderWidth = 2
-        } else {
-            textField.layer.borderColor = UIColor.gray.cgColor
-            textField.layer.borderWidth = 0
+        if let isEmpty = textField.text?.isEmpty {
+            if isEmpty {
+                textField.layer.borderColor = UIColor.red.cgColor
+                textField.layer.borderWidth = 2
+            } else {
+                textField.layer.borderColor = UIColor.lightGray.cgColor
+                textField.layer.borderWidth = 0
+            }
         }
     }
     
@@ -75,5 +83,7 @@ extension ViewController: UITextFieldDelegate {
         register()
         return true
     }
+    
+    // didChangeSelection
 }
 
