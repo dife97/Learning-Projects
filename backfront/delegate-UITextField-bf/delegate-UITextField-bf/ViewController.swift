@@ -34,10 +34,14 @@ class ViewController: UIViewController {
     
     //MARK: - Private Methods
     private func register() {
-        if nameTextField.text != "" && emailTextField.text != "" && passwordTextField.text != "" {
+        if isAllTextFieldsFilled() {
             confirmationLabel.isHidden = false
             print("Cadastro realizado com sucesso")
         }
+    }
+    
+    private func isAllTextFieldsFilled() -> Bool {
+        nameTextField.text != "" && emailTextField.text != "" && passwordTextField.text != "" ? true : false
     }
 }
 
@@ -59,7 +63,7 @@ extension ViewController: UITextFieldDelegate {
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        if nameTextField.text != "" && emailTextField.text != "" && passwordTextField.text != "" {
+        if isAllTextFieldsFilled() {
             registerButton.isEnabled = true
             registerButton.backgroundColor = .red
         }
