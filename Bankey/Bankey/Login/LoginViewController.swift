@@ -9,10 +9,8 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    let bankeyLogoStackView = UIStackView()
-    let bankeyLogoLabel = UILabel()
+    let bankeyTitleLabel = UILabel()
     let bankeyDescriptionLabel = UILabel()
-    
     let loginView = LoginView()
     let signInButton = UIButton(type: .system)
     let errorMessageLabel = UILabel()
@@ -30,7 +28,6 @@ class LoginViewController: UIViewController {
         
         style()
         layout()
-    
     }
 }
 
@@ -38,17 +35,16 @@ extension LoginViewController {
     private func style() {
         loginView.translatesAutoresizingMaskIntoConstraints = false
         
-        bankeyLogoStackView.translatesAutoresizingMaskIntoConstraints = false
-        bankeyLogoStackView.axis = .vertical
-        bankeyLogoStackView.spacing = 16
-        
-        bankeyLogoLabel.translatesAutoresizingMaskIntoConstraints = false
-        bankeyLogoLabel.textAlignment = .center
-        bankeyLogoLabel.font = bankeyLogoLabel.font.withSize(30)
-        bankeyLogoLabel.text = "Bankey"
+        bankeyTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        bankeyTitleLabel.textAlignment = .center
+        bankeyTitleLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+        bankeyTitleLabel.adjustsFontForContentSizeCategory = true
+        bankeyTitleLabel.text = "Bankey"
         
         bankeyDescriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         bankeyDescriptionLabel.textAlignment = .center
+        bankeyDescriptionLabel.font = UIFont.preferredFont(forTextStyle: .title3)
+        bankeyDescriptionLabel.adjustsFontForContentSizeCategory = true
         bankeyDescriptionLabel.numberOfLines = 0
         bankeyDescriptionLabel.text = "Your premium source for all things banking!"
         
@@ -66,19 +62,21 @@ extension LoginViewController {
     }
     
     private func layout() {
-        bankeyLogoStackView.addArrangedSubview(bankeyLogoLabel)
-        bankeyLogoStackView.addArrangedSubview(bankeyDescriptionLabel)
-        
-        view.addSubview(bankeyLogoStackView)
+        view.addSubview(bankeyTitleLabel)
+        view.addSubview(bankeyDescriptionLabel)
         view.addSubview(loginView)
         view.addSubview(signInButton)
         view.addSubview(errorMessageLabel)
         
         
-        // Bankey Logo StackView
+        // Bankey Title and Description Labels
         NSLayoutConstraint.activate([
-            bankeyLogoStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            bankeyLogoStackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100)
+            bankeyTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            bankeyDescriptionLabel.topAnchor.constraint(equalToSystemSpacingBelow: bankeyTitleLabel.bottomAnchor, multiplier: 3),
+            
+            bankeyDescriptionLabel.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
+            bankeyDescriptionLabel.trailingAnchor.constraint(equalTo: loginView.trailingAnchor),
+            loginView.topAnchor.constraint(equalToSystemSpacingBelow: bankeyDescriptionLabel.bottomAnchor, multiplier: 3)
         ])
         
         // Login
