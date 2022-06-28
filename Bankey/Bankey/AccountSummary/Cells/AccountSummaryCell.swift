@@ -9,6 +9,24 @@ import UIKit
 
 class AccountSummaryCell: UITableViewCell {
     
+    enum AccountType: String {
+        case Banking
+        case CreditCard
+        case Investment
+    }
+    
+    struct ViewModel {
+        let accountType: AccountType
+        let accountName: String
+        let balance: Decimal
+
+        var balanceAsAttributedString: NSAttributedString {
+            return CurrencyFormatter().makeAttributedCurrency(balance)
+        }
+    }
+    
+    let viewModel: ViewModel? = nil
+    
     let typeLabel = UILabel()
     let underlineView = UIView()
     let nameLabel = UILabel()
@@ -67,7 +85,6 @@ extension AccountSummaryCell {
         // Balance Amount
         balanceAmountLabel.translatesAutoresizingMaskIntoConstraints = false
         balanceAmountLabel.textAlignment = .right
-        balanceAmountLabel.attributedText = makeFormattedBalance(dollars: "929,466", cents: "23")
         
         // Chevron
         chevronImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -119,19 +136,25 @@ extension AccountSummaryCell {
             trailingAnchor.constraint(equalToSystemSpacingAfter: chevronImageView.trailingAnchor, multiplier: 1)
         ])
     }
-    
-    private func makeFormattedBalance(dollars: String, cents: String) -> NSMutableAttributedString {
-        let dollarSignAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .callout), .baselineOffset: 8]
-        let dollarAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .title1)]
-        let centAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .footnote), .baselineOffset: 8]
+}
+
+extension AccountSummaryCell {
+    func configure(with vm: ViewModel) {
         
-        let rootString = NSMutableAttributedString(string: "$", attributes: dollarSignAttributes)
-        let dollarString = NSAttributedString(string: dollars, attributes: dollarAttributes)
-        let centString = NSAttributedString(string: cents, attributes: centAttributes)
+        typeLabel.text = vm.accountType.rawValue
+        nameLabel.text = vm.accountName
+        balanceAmountLabel.attributedText = vm.balanceAsAttributedString
         
-        rootString.append(dollarString)
-        rootString.append(centString)
-        
-        return rootString
+        switch vm.accountType {
+        case .Banking:
+            underlineView.backgroundColor = appColor
+            balanceLabel.text = "Current Balance"
+        case .CreditCard:
+            underlineView.backgroundColor = .systemOrange
+            balanceLabel.text = "Balance"
+        case .Investment:
+            underlineView.backgroundColor = .systemPurple
+            balanceLabel.text = "Value"
+        }
     }
 }
