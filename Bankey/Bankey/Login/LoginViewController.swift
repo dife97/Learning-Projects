@@ -67,7 +67,7 @@ extension LoginViewController {
         signInButton.configuration = .filled()
         signInButton.configuration?.imagePadding = 8
         signInButton.setTitle("Sign In", for: [])
-        signInButton.addTarget(self, action: #selector(signInTapped), for: .primaryActionTriggered)
+        signInButton.addTarget(self, action: #selector(signInTapped(_:)), for: .primaryActionTriggered)
         
         errorMessageLabel.translatesAutoresizingMaskIntoConstraints = false
         errorMessageLabel.textAlignment = .center
@@ -119,7 +119,7 @@ extension LoginViewController {
 
 //MARK: - Actions
 extension LoginViewController {
-    @objc func signInTapped(sender: UIButton) {
+    @objc func signInTapped(_ sender: UIButton) {
         errorMessageLabel.isHidden = true
         login()
     }

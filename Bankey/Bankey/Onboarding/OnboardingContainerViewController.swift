@@ -72,7 +72,7 @@ class OnboardingContainerViewController: UIViewController {
     private func style() {
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         closeButton.setTitle("Close", for: [])
-        closeButton.addTarget(self, action: #selector(closeTapped), for: .primaryActionTriggered)
+        closeButton.addTarget(self, action: #selector(closeTapped(_:)), for: .primaryActionTriggered)
         
         view.addSubview(closeButton)
     }
