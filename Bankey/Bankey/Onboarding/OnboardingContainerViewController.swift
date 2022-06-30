@@ -124,8 +124,4 @@ extension OnboardingContainerViewController {
     @objc func closeTapped(_ sender: UIButton) {
         delegate?.didFinishOnboarding()
     }
-    
-    @objc func doneTapped(_ sender: UIButton) {
-        delegate?.didFinishOnboarding()
-    }
 }
