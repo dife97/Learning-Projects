@@ -153,22 +153,34 @@ extension LoginViewController {
         }
   
 //        temporaily turned off while building the app
-//        if username.isEmpty || password.isEmpty {
-//            configureView(withMessage: "Username / password cannot be blank")
-//            return
-//        }
+        if username.isEmpty || password.isEmpty {
+            configureView(withMessage: "Username or password cannot be blank")
+            return
+        }
         
-        if username == "" && password == "" {
+        if username == "Diego" && password == "lindo" {
             signInButton.configuration?.showsActivityIndicator = true
             delegate?.didLogin()
         } else {
-            configureView(withMessage: "Incorrect username / password")
+            configureView(withMessage: "Incorrect username or password")
         }
     }
     
     private func configureView(withMessage message: String) {
         errorMessageLabel.isHidden = false
         errorMessageLabel.text = message
+        shakeButton()
+    }
+    
+    private func shakeButton() {
+        let animation = CAKeyframeAnimation()
+        animation.keyPath = "position.x"
+        animation.values = [0, 10, -10, 10, 0]
+        animation.keyTimes = [0, 0.16, 0.5, 0.83, 1]
+        animation.duration = 0.4
+        
+        animation.isAdditive = true
+        signInButton.layer.add(animation, forKey: "shake")
     }
 }
 
