@@ -33,6 +33,12 @@ class LoginViewController: UIViewController {
         return loginView.passwordTextField.text
     }
     
+    var leadingEdgeOnScreen: CGFloat = 16
+    var leadingEdgeOffScreen: CGFloat = -1000
+    
+    var bankeyTitleLeadingAnchor: NSLayoutConstraint?
+    var bankeyDescriptionLeadingAnchor: NSLayoutConstraint?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,6 +49,11 @@ class LoginViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         signInButton.configuration?.showsActivityIndicator = false
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        animate()
     }
 }
 
@@ -55,6 +66,7 @@ extension LoginViewController {
         bankeyTitleLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
         bankeyTitleLabel.adjustsFontForContentSizeCategory = true
         bankeyTitleLabel.text = "Bankey"
+        bankeyTitleLabel.alpha = 0
         
         bankeyDescriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         bankeyDescriptionLabel.textAlignment = .center
@@ -62,6 +74,7 @@ extension LoginViewController {
         bankeyDescriptionLabel.adjustsFontForContentSizeCategory = true
         bankeyDescriptionLabel.numberOfLines = 0
         bankeyDescriptionLabel.text = "Your premium source for all things banking!"
+        bankeyDescriptionLabel.alpha = 0
         
         signInButton.translatesAutoresizingMaskIntoConstraints = false
         signInButton.configuration = .filled()
@@ -84,15 +97,24 @@ extension LoginViewController {
         view.addSubview(errorMessageLabel)
         
         
-        // Bankey Title and Description Labels
+        // Title
         NSLayoutConstraint.activate([
-            bankeyTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             bankeyDescriptionLabel.topAnchor.constraint(equalToSystemSpacingBelow: bankeyTitleLabel.bottomAnchor, multiplier: 3),
-            
-            bankeyDescriptionLabel.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
-            bankeyDescriptionLabel.trailingAnchor.constraint(equalTo: loginView.trailingAnchor),
-            loginView.topAnchor.constraint(equalToSystemSpacingBelow: bankeyDescriptionLabel.bottomAnchor, multiplier: 3)
+            bankeyTitleLabel.trailingAnchor.constraint(equalTo: loginView.trailingAnchor),
         ])
+        
+        bankeyTitleLeadingAnchor = bankeyTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: leadingEdgeOffScreen)
+        bankeyTitleLeadingAnchor?.isActive = true
+
+        
+        // Description
+        NSLayoutConstraint.activate([
+            loginView.topAnchor.constraint(equalToSystemSpacingBelow: bankeyDescriptionLabel.bottomAnchor, multiplier: 3),
+            bankeyDescriptionLabel.trailingAnchor.constraint(equalTo: loginView.trailingAnchor),
+        ])
+        
+        bankeyDescriptionLeadingAnchor = bankeyDescriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: leadingEdgeOffScreen)
+        bankeyDescriptionLeadingAnchor?.isActive = true
         
         // Login
         NSLayoutConstraint.activate([
@@ -147,5 +169,32 @@ extension LoginViewController {
     private func configureView(withMessage message: String) {
         errorMessageLabel.isHidden = false
         errorMessageLabel.text = message
+    }
+}
+
+//MARK: - Animations
+extension LoginViewController {
+    private func animate() {
+        let duration = 0.8
+        
+        let animator1 = UIViewPropertyAnimator(duration: duration, curve: .easeOut) {
+            self.bankeyTitleLeadingAnchor?.constant = self.leadingEdgeOnScreen
+//            self.bankeyDescriptionLeadingAnchor?.constant = self.leadingEdgeOnScreen
+            self.view.layoutIfNeeded()
+        }
+        animator1.startAnimation()
+        
+        let animator2 = UIViewPropertyAnimator(duration: duration, curve: .easeOut) {
+            self.bankeyDescriptionLeadingAnchor?.constant = self.leadingEdgeOnScreen
+            self.view.layoutIfNeeded()
+        }
+        animator2.startAnimation(afterDelay: 0.2)
+        
+        let animator3 = UIViewPropertyAnimator(duration: duration * 2, curve: .easeOut) {
+            self.bankeyTitleLabel.alpha = 1
+            self.bankeyDescriptionLabel.alpha = 1
+            self.view.layoutIfNeeded()
+        }
+        animator3.startAnimation(afterDelay: 0.2)
     }
 }
