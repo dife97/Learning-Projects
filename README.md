@@ -1,5 +1,6 @@
-# learning
-projects while learning iOS development
+# Learning-Projects
+Hello, you! 👋
+Here's the summary about the techs I learned and used in each project. 
 
 ## 💪 [BMI-Calculator](https://github.com/dife97/Learning-Projects/tree/main/BMI-Calculator)
 #### The app calculates the BMI for a given height and weight. 
