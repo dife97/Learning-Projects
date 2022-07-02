@@ -1,6 +1,7 @@
 # Learning-Projects
 Hello, you! 👋  
-Here's the summary about the techs I learned and used in each project. All these projects are now being refactored to UIKit programmaticaly (Viewcode). 
+Here's the summary of the projects I developed since I started learning iOS Developement. They were all developed using Storyboard at first place, but right now I am refactoring all of them to UIKit programmaticaly (Viewcode). Take a look :)  
+
 
 ## 💪 [BMI-Calculator](https://github.com/dife97/Learning-Projects/tree/main/BMI-Calculator)
 #### The app calculates the BMI for a given height and weight. 
