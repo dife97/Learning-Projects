@@ -5,9 +5,10 @@ Here's the summary of the projects I developed since I started learning iOS Deve
 
 ## 💪 [BMI-Calculator](https://github.com/dife97/Learning-Projects/tree/main/BMI-Calculator)
 #### The app calculates the BMI for a given height and weight. 
-- Dependecy Injection;
+- Dependecy Injection for passing data between ViewControllers;
 - Reusable view for the Slider component;
-- Unit Test for the BMI result.
+- Unit Test for the BMI result;
+- Dark Mode support.
 
 ## 🌧 [Clima](https://github.com/dife97/learning/tree/main/Clima)
 - Delegation pattern; 
