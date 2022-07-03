@@ -8,9 +8,9 @@
 
 import UIKit
 
-class CalculateViewController: UIViewController {
+class oldCalculateViewController: UIViewController {
     
-    var calculatorBrain = CalculateBrain()
+    var calculatorBrain = Calculator()
     
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
@@ -43,12 +43,11 @@ class CalculateViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToResult" {
-            let destinationVC = segue.destination as! ResultViewController
+            let destinationVC = segue.destination as! oldResultViewController
             destinationVC.bmiValue = calculatorBrain.getBMIValue()
             destinationVC.advice = calculatorBrain.getAdvice()
             destinationVC.color = calculatorBrain.getColor()
         }
     }
-    
 }
 
