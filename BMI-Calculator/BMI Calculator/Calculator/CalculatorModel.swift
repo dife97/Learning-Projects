@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct CalculatorBrain {
+struct Calculator {
     
     var bmi: BMI?
     

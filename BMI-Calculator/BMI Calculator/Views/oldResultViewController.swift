@@ -2,7 +2,7 @@
 //  ResultViewController.swift
 //  BMI Calculator
 //
-//  Created by Diego Ferreira on 09/06/22.
+//  Created by Diego Personal on 09/06/22.
 //  Copyright © 2022 Angela Yu. All rights reserved.
 //
 
