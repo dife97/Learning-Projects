@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31B9EDF8287206A800670E5B /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B9EDF7287206A800670E5B /* CalculatorViewController.swift */; };
+		31B9EDFA28720CBF00670E5B /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B9EDF928720CBF00670E5B /* CalculatorView.swift */; };
+		31B9EDFD2872115200670E5B /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B9EDFC2872115200670E5B /* Button.swift */; };
+		31B9EE012872287300670E5B /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B9EE002872287300670E5B /* ResultViewController.swift */; };
+		31B9EE032872287D00670E5B /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B9EE022872287D00670E5B /* ResultView.swift */; };
 		31F9A76F2871E0DF0012AF68 /* BMI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F9A76E2871E0DF0012AF68 /* BMI.swift */; };
 		31F9A7712871E1070012AF68 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F9A7702871E1070012AF68 /* Calculator.swift */; };
 		31F9A7732871E4190012AF68 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F9A7722871E4190012AF68 /* MainViewController.swift */; };
@@ -21,6 +26,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		31B9EDF7287206A800670E5B /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		31B9EDF928720CBF00670E5B /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
+		31B9EDFC2872115200670E5B /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		31B9EE002872287300670E5B /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		31B9EE022872287D00670E5B /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		31F9A76E2871E0DF0012AF68 /* BMI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMI.swift; sourceTree = "<group>"; };
 		31F9A7702871E1070012AF68 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		31F9A7722871E4190012AF68 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -47,10 +57,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31B9EDFB2872113800670E5B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				31B9EDFC2872115200670E5B /* Button.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		31B9EDFE2872285700670E5B /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				31B9EE002872287300670E5B /* ResultViewController.swift */,
+				31B9EE022872287D00670E5B /* ResultView.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
 		31F9A76A2871DC240012AF68 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
 				31F9A76D2871E0370012AF68 /* Brain */,
+				31B9EDF7287206A800670E5B /* CalculatorViewController.swift */,
+				31B9EDF928720CBF00670E5B /* CalculatorView.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -106,7 +135,9 @@
 				AD0B9F7B230D61800065EFD9 /* SceneDelegate.swift */,
 				31F9A7722871E4190012AF68 /* MainViewController.swift */,
 				31F9A76A2871DC240012AF68 /* Calculator */,
+				31B9EDFE2872285700670E5B /* Result */,
 				31F9A76B2871DE280012AF68 /* MyBMI */,
+				31B9EDFB2872113800670E5B /* Components */,
 				AD0B9F8D230D63D70065EFD9 /* old */,
 			);
 			path = "BMI Calculator";
@@ -199,8 +230,13 @@
 				AD0B9F7A230D61800065EFD9 /* AppDelegate.swift in Sources */,
 				AD0B9F7C230D61800065EFD9 /* SceneDelegate.swift in Sources */,
 				31F9A76F2871E0DF0012AF68 /* BMI.swift in Sources */,
+				31B9EDFA28720CBF00670E5B /* CalculatorView.swift in Sources */,
+				31B9EE032872287D00670E5B /* ResultView.swift in Sources */,
 				F856FBBF28527996002F5D21 /* oldResultViewController.swift in Sources */,
+				31B9EDF8287206A800670E5B /* CalculatorViewController.swift in Sources */,
 				31F9A7712871E1070012AF68 /* Calculator.swift in Sources */,
+				31B9EDFD2872115200670E5B /* Button.swift in Sources */,
+				31B9EE012872287300670E5B /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

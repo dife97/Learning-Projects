@@ -1,5 +1,5 @@
 //
-//  MyBMIViewController.swift
+//  CalculatorView.swift
 //  BMI Calculator
 //
 //  Created by Diego Personal on 03/07/22.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyBMIViewController: UIViewController {
+class CalculatorView: UIView {
     
     //MARK: - UI
     lazy var stackview: UIStackView = {
@@ -24,34 +24,47 @@ class MyBMIViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.preferredFont(forTextStyle: .title1)
-        label.text = "Welcome"
+        label.text = "Sliders"
         
         return label
     }()
     
+    
     //MARK: - INITIALIZERS
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
         setup()
     }
     
-    //MARK: - PRIVATE FUNCTIONS
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: 200, height: 200)
+    }
+}
+
+extension CalculatorView {
     private func setup() {
-        view.backgroundColor = .systemYellow
+        backgroundColor = .systemOrange
+        
         setupHierarchy()
         setupConstraints()
     }
     
     private func setupHierarchy() {
+        translatesAutoresizingMaskIntoConstraints = false
+        
         stackview.addArrangedSubview(label)
-        view.addSubview(stackview)
+        addSubview(stackview)
     }
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            stackview.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            stackview.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            stackview.centerXAnchor.constraint(equalTo: centerXAnchor),
+            stackview.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
 }
