@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F8004063287DD8980064A288 /* winners.json in Resources */ = {isa = PBXBuildFile; fileRef = F8004062287DD8980064A288 /* winners.json */; };
+		F8004065287DEE1A0064A288 /* WorldCupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8004064287DEE1A0064A288 /* WorldCupTableViewCell.swift */; };
 		F8326248287DD72600D22875 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8326247287DD72600D22875 /* AppDelegate.swift */; };
 		F832624A287DD72600D22875 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8326249287DD72600D22875 /* SceneDelegate.swift */; };
 		F832624F287DD72600D22875 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F832624D287DD72600D22875 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		F8004062287DD8980064A288 /* winners.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = winners.json; sourceTree = "<group>"; };
+		F8004064287DEE1A0064A288 /* WorldCupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldCupTableViewCell.swift; sourceTree = "<group>"; };
 		F8326244287DD72600D22875 /* WorldCupChampions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldCupChampions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8326247287DD72600D22875 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8326249287DD72600D22875 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				F8326261287DD79600D22875 /* WinnersTableViewController.swift */,
+				F8004064287DEE1A0064A288 /* WorldCupTableViewCell.swift */,
 				F8326263287DD7B900D22875 /* WorldCupViewController.swift */,
 			);
 			path = Controllers;
@@ -183,6 +186,7 @@
 				F8326262287DD79600D22875 /* WinnersTableViewController.swift in Sources */,
 				F8326248287DD72600D22875 /* AppDelegate.swift in Sources */,
 				F8326260287DD76C00D22875 /* WorldCup.swift in Sources */,
+				F8004065287DEE1A0064A288 /* WorldCupTableViewCell.swift in Sources */,
 				F8326264287DD7B900D22875 /* WorldCupViewController.swift in Sources */,
 				F832624A287DD72600D22875 /* SceneDelegate.swift in Sources */,
 			);
@@ -337,6 +341,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -365,6 +370,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
