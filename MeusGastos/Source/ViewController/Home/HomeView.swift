@@ -22,18 +22,18 @@ class HomeView: UIView {
         return segmentedControl
     }()
     
-    lazy var inputsView: UIView = {
-        let view = UIView()
+    lazy var inputsView: ImputOutputView = {
+        let view = ImputOutputView(typeEntry: .input)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .red
+        view.layer.cornerRadius = 8
         
         return view
     }()
     
-    lazy var outputsView: UIView = {
-        let view = UIView()
+    lazy var outputsView: ImputOutputView = {
+        let view = ImputOutputView(typeEntry: .output)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .green
+        view.layer.cornerRadius = 8
         
         return view
     }()
@@ -51,9 +51,15 @@ class HomeView: UIView {
     
     //MARK: - Configs
     private func configureUI() {
+        setValue()
         configureSegmentedControl()
         configureInputView()
         configureOutputView()
+    }
+    
+    private func setValue() {
+        inputsView.setValue(value: 11500)
+        outputsView.setValue(value: 250)
     }
     
     private func configureSegmentedControl() {
