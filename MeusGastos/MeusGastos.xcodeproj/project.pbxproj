@@ -15,6 +15,9 @@
 		F8468C53288F02BB003FEDB2 /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8468C52288F02BB003FEDB2 /* RegisterCoordinator.swift */; };
 		F8468C56288F0307003FEDB2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8468C55288F0307003FEDB2 /* RegisterViewController.swift */; };
 		F8468C59288F033C003FEDB2 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8468C58288F033C003FEDB2 /* RegisterView.swift */; };
+		F8468C5B288F219B003FEDB2 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8468C5A288F219B003FEDB2 /* HomeCoordinator.swift */; };
+		F8468C5E288F2238003FEDB2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8468C5D288F2238003FEDB2 /* HomeViewController.swift */; };
+		F8468C60288F2240003FEDB2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8468C5F288F2240003FEDB2 /* HomeView.swift */; };
 		F8AD91472863ED0A009B7123 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AD91462863ED0A009B7123 /* AppDelegate.swift */; };
 		F8AD91492863ED0A009B7123 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AD91482863ED0A009B7123 /* SceneDelegate.swift */; };
 		F8AD91502863ED0F009B7123 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8AD914F2863ED0F009B7123 /* Assets.xcassets */; };
@@ -53,6 +56,9 @@
 		F8468C52288F02BB003FEDB2 /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
 		F8468C55288F0307003FEDB2 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F8468C58288F033C003FEDB2 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		F8468C5A288F219B003FEDB2 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		F8468C5D288F2238003FEDB2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F8468C5F288F2240003FEDB2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F8AD91432863ED0A009B7123 /* MeusGastos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeusGastos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8AD91462863ED0A009B7123 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8AD91482863ED0A009B7123 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +128,15 @@
 			path = Register;
 			sourceTree = "<group>";
 		};
+		F8468C5C288F2214003FEDB2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F8468C5D288F2238003FEDB2 /* HomeViewController.swift */,
+				F8468C5F288F2240003FEDB2 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		F8AD913A2863ED0A009B7123 = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +203,7 @@
 				F8AD91782863ED6E009B7123 /* Coordinator.swift */,
 				F8AD917A2863EDF8009B7123 /* LoginCoordinator.swift */,
 				F8468C52288F02BB003FEDB2 /* RegisterCoordinator.swift */,
+				F8468C5A288F219B003FEDB2 /* HomeCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -197,6 +213,7 @@
 			children = (
 				F8AD917D2863FC2B009B7123 /* Login */,
 				F8468C54288F02FB003FEDB2 /* Register */,
+				F8468C5C288F2214003FEDB2 /* Home */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -345,12 +362,15 @@
 				F8468C59288F033C003FEDB2 /* RegisterView.swift in Sources */,
 				F8468C53288F02BB003FEDB2 /* RegisterCoordinator.swift in Sources */,
 				F8468C51288EF0FF003FEDB2 /* ViewControllerDefault.swift in Sources */,
+				F8468C5E288F2238003FEDB2 /* HomeViewController.swift in Sources */,
+				F8468C5B288F219B003FEDB2 /* HomeCoordinator.swift in Sources */,
 				F8AD91472863ED0A009B7123 /* AppDelegate.swift in Sources */,
 				F8AD91492863ED0A009B7123 /* SceneDelegate.swift in Sources */,
 				F8AD917B2863EDF8009B7123 /* LoginCoordinator.swift in Sources */,
 				F8AD91812863FC52009B7123 /* LoginViewController.swift in Sources */,
 				F8468C4A288EE89C003FEDB2 /* LabelDefault.swift in Sources */,
 				F8AD91792863ED6E009B7123 /* Coordinator.swift in Sources */,
+				F8468C60288F2240003FEDB2 /* HomeView.swift in Sources */,
 				F8468C4C288EEB02003FEDB2 /* TextFieldDefault.swift in Sources */,
 				F8468C56288F0307003FEDB2 /* RegisterViewController.swift in Sources */,
 			);

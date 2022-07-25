@@ -17,6 +17,10 @@ class LoginCoordinator: Coordinator {
     func start() {
         let viewController = LoginViewController()
         
+        viewController.onLoginTap = {
+            self.showHome()
+        }
+        
         viewController.onRegisterTap = {
             self.showRegister()
         }
@@ -26,6 +30,11 @@ class LoginCoordinator: Coordinator {
     
     private func showRegister() {
         let coordinator = RegisterCoordinator(navigationController: self.navigationController)
+        coordinator.start()
+    }
+    
+    private func showHome() {
+        let coordinator = HomeCoordinator(navigationController: self.navigationController)
         coordinator.start()
     }
 }
