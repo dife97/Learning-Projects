@@ -1,5 +1,5 @@
 //
-//  Colors.swift
+//  Color+.swift
 //  MeusGastos
 //
 //  Created by Diego Ferreira on 25/07/22.
