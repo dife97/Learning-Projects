@@ -7,11 +7,22 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: ViewControllerDefault {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    var onRegisterTap: (() -> Void)?
+    
+    lazy var loginView: LoginView = {
+        let view = LoginView()
+        view.backgroundColor = .systemBackground
         
-        self.view.backgroundColor = .red
+        view.onRegisterTap = {
+            self.onRegisterTap?()
+        }
+        
+        return view
+    }()
+    
+    override func loadView() {
+        self.view = loginView
     }
 }
